@@ -20,7 +20,7 @@ ulti.set("EventNum","1")
 ulti.set("MachState","Ready")
 ulti.set("TimeStamp","654265265265265")
 
-#-----------------------------------
+#-----------------------------------------
 hul = ET.SubElement(root, "HandlingUnitLoad")
 hul.set("HandlingUnit_id","24 digit barcode")
 hul.set("HandlingUnitType","0")
