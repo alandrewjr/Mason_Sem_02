@@ -66,17 +66,34 @@ class Journey(object):
                     i += 1
             return TotalDist
     
-
     def city_arrival_time(self, city):
         TotalArrivalTime = 0
+        StartTime = 0
+        Dist = 0
+        FPS = 0
+        Total = 0
+        j = 1
+    
         if len(self.destinations) == 1:
-            TotalArrivalTime = self.start_time
+            Total = self.start_time
         else:
-            vfdsea=5423
-            #for x in :
+            #StartTime = self.start_time + self.destinations[0].stop_time
+            #FPS = self.train.speed_fps
+            #Dist = (self.destinations[0].distance_to_city(self.destinations[1])) / FPS
+            #Total = StartTime + Dist
+
+            StartTime = self.start_time + self.destinations[0].stop_time
+            FPS = self.train.speed_fps
+            for x in self.destinations:
+                Dist = (x.distance_to_city(self.destinations[j])) / FPS
+                j += j
+                Total = StartTime + Dist
     
 
-        return self.start_time
+            
+    
+
+        return Total
 
     
 
@@ -88,6 +105,20 @@ class Journey(object):
         return ""
 
     def all_passengers_accommodated(self, unload_list, load_list):
-        return ""
-
-
+        Hit = True
+        for x in self.destinations:
+            for y in unload_list:
+                try:
+                    self.train.unload_passengers(y)
+                    qqq = self.train.num_passengers
+                except:
+                    Hit = False
+                    return Hit
+            for z in load_list:
+                try:
+                    self.train.load_passengers(z)
+                    ttt = self.train.num_passengers
+                except:
+                    Hit = False
+                    return Hit
+        return Hit

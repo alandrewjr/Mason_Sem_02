@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>3c8db18a-40cf-4129-a94c-027607044b48</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tutor_01.py</StartupFile>
+    <StartupFile>Classes.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

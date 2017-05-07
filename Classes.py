@@ -256,12 +256,53 @@ def city_arrival_time():
     #j = Journey(t,[c1],200)
     #print(j.city_arrival_time(c1)) # 200
 
+    #t = Train("Express One", 50, 10)
+    #c1 = City("City 1",0,3,300)
+    #c2 = City("City 2",0,3003,300)
+    #j = Journey(t,[c1,c2],200)
+    #print(j.city_arrival_time(c2)) # 800
+
+    #t = Train("Express One", 50, 10)
+    #c1 = City("City 1",100,3,120)
+    #c2 = City("City 2",78,300,300)
+    #j = Journey(t,[c1,c2],1000)
+    #print(j.city_arrival_time(c1)) #,1000
+    ##print(j.city_arrival_time(c2)) # 1149
+
     t = Train("Express One", 50, 10)
-    c1 = City("City 1",0,3,300)
-    c2 = City("City 2",0,3003,300)
-    j = Journey(t,[c1,c2],200)
-    print(j.city_arrival_time(c2)) # 800
+    c1 = City("City 1",100,3,120)
+    c2 = City("City 2",78,300,300)
+    c3 = City("City 3", 50, 100, 240)
+    j = Journey(t,[c1,c2,c3],1000)
+    print(j.city_arrival_time(c3)) # 1469
 
 #region city_arrival_time(self, city)
-city_arrival_time()
+#city_arrival_time()
+#endregion
+
+
+def AllPassengersAccommodated():
+    #t = Train("Express One", 50, 100)
+    #c1 = City("City 1",0,3,300)
+    #j = Journey(t,[c1],200)
+    #print(j.all_passengers_accommodated([5],[5])) # False #no passenger to be unloaded
+
+    #t = Train("Express One", 50, 100)
+    #c1 = City("City 1",0,3,300)
+    #j = Journey(t,[c1],200)
+    #print(j.all_passengers_accommodated([0],[100])) # False) #too many to load
+  
+    #t = Train("Express One", 50, 10)
+    #c1 = City("City 1",0,3,300)
+    #j = Journey(t,[c1],200)
+    #print(j.all_passengers_accommodated([0],[30])) # ,True)
+
+    t = Train("Express One", 50, 10)
+    c1 = City("City 1",0,3,300)
+    c2 = City("City 2",78,300,300)
+    j = Journey(t,[c1,c2],200)
+    print(j.all_passengers_accommodated([0,40],[30,10])) #,False)
+
+#region AllPassengersAccommodated
+#AllPassengersAccommodated()
 #endregion
