@@ -306,3 +306,19 @@ def AllPassengersAccommodated():
 #region AllPassengersAccommodated
 #AllPassengersAccommodated()
 #endregion
+
+def total_journey_time():
+    t = Train("Express One", 50, 100)
+    c1 = City("City 1",0,3,300)
+    j = Journey(t,[c1],200)
+    print(j.total_journey_time()) #,300)
+    
+    t = Train("Express One", 50, 10)
+    c1 = City("City 1",0,3,300)
+    c2 = City("City 2",0,3003,300)
+    j = Journey(t,[c1,c2],200)
+    print(j.total_journey_time()) #,900)
+
+#region total_journey_time(self)
+total_journey_time()
+#endregion
